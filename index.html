@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tết Nguyên Đán Việt Nam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- THIẾT LẬP CHUNG --- */
+        :root {
+            --primary-red: #b30000; 
+            --bg-cream: rgba(255, 253, 245, 0.9); /* Màu kem có độ trong suốt */
+            --gold: #ffd700;        
+            --text-dark: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            /* LỆNH THÊM ẢNH NỀN CHO TOÀN BỘ TRANG */
+            background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/paper.png'), 
+                              url('1');
+            background-attachment: fixed;
+            background-size: auto, cover;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-red);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            height: 80vh;
+            /* DÙNG ẢNH NỀN CHO BANNER ĐẦU TRANG */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1582041236130-1b707470f114?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5.5rem;
+            color: var(--gold);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            font-style: italic;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background-color: var(--primary-red);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+
+        nav ul li { margin: 0 20px; }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: #fff; }
+
+        /* --- CÁC SECTION --- */
+        section {
+            padding: 80px 40px;
+            margin: 40px 0;
+            background-color: var(--bg-cream); /* Đổ nền kem mờ để nổi bật chữ trên ảnh nền body */
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: block;
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 15px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .intro-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-img {
+            flex: 1;
+            box-shadow: 12px 12px 0px var(--primary-red);
+            border-radius: 8px;
+        }
+
+        .intro-text {
+            flex: 1;
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+
+        /* --- GRID (Tăng kích thước để bỏ ảnh đẹp hơn) --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card img {
+            height: 280px; /* Tăng chiều cao ảnh ở các card */
+            width: 100%;
+        }
+
+        .card h3 { padding: 20px 15px 10px; font-size: 1.6rem; }
+
+        .card p { padding: 0 20px 25px; color: #555; font-size: 1.05rem; }
+
+        /* --- Ý NGHĨA --- */
+        .meaning-item {
+            display: flex;
+            margin-bottom: 50px;
+            background: rgba(255,255,255,0.8);
+            padding: 30px;
+            border-radius: 15px;
+            align-items: center;
+            border-left: 8px solid var(--primary-red);
+        }
+
+        .meaning-item:nth-child(even) { flex-direction: row-reverse; border-left: none; border-right: 8px solid var(--primary-red); }
+
+        .meaning-img { flex: 1; max-width: 45%; }
+
+        .meaning-content { flex: 2; padding: 0 40px; }
+
+        .meaning-content h3 { font-size: 2rem; margin-bottom: 15px; }
+
+        footer {
+            background-color: var(--primary-red);
+            color: var(--gold);
+            text-align: center;
+            padding: 40px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            .intro-content, .meaning-item, .meaning-item:nth-child(even) { flex-direction: column; }
+            .meaning-img { max-width: 100%; }
+            section { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Tết Nguyên Đán</h1>
+        <p>"Giữ gìn bản sắc - Kết nối yêu thương"</p>
+        <p style="margin-top: 15px; font-size: 1.4rem; color: var(--gold);">Chào Xuân Giáp Bính Ngọ 2026</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#gioi-thieu">Giới thiệu</a></li>
+            <li><a href="#phong-tuc">Phong tục</a></li>
+            <li><a href="#am-thuc">Ẩm thực</a></li>
+            <li><a href="#y-nghia">Ý nghĩa</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="gioi-thieu">
+            <h2 class="section-title">Giới Thiệu</h2>
+            <div class="intro-content">
+                <div class="intro-img">
+                    <img src="2" alt="Hoa Đào">
+                </div>
+                <div class="intro-text">
+                    <p>Tết Nguyên Đán là dịp lễ truyền thống quan trọng nhất của người Việt. Đây là thời điểm vạn vật hồi sinh, gia đình đoàn tụ sau một năm làm việc vất vả.</p>
+                    <br>
+                    <p>Mỗi khi thấy hoa đào, hoa mai nở rộ, lòng người lại náo nức chuẩn bị đón những điều tốt lành nhất trong năm mới.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="phong-tuc">
+            <h2 class="section-title">Phong tục Truyền thống</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <img src="3" alt="Gói bánh chưng">
+                    <h3>Gói Bánh Chưng</h3>
+                    <p>Nét đẹp văn hóa thể hiện sự thành kính với đất trời và tổ tiên.</p>
+                </div>
+                <div class="card">
+                    <img src="4" alt="Ông Táo">
+                    <h3>Cúng Ông Táo</h3>
+                    <p>Lễ tiễn vị thần bếp về trời báo cáo chuyện gia đình trong năm cũ.</p>
+                </div>
+                <div class="card">
+                    <img src="5" alt="Lì xì">
+                    <h3>Chúc Tết Lì Xì</h3>
+                    <p>Trao nhau may mắn qua những phong bao đỏ thắm cho trẻ nhỏ và người già.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="am-thuc">
+            <h2 class="section-title">Ẩm thực Ngày Tết</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <img src="6" alt="Bánh Chưng">
+                    <h3>Bánh Chưng Giò Lụa</h3>
+                    <p>Món ăn không thể thiếu trên bàn thờ gia tiên và mâm cỗ đoàn viên.</p>
+                </div>
+                <div class="card">
+                    <img src="7" alt="Thịt Kho">
+                    <h3>Thịt Kho Hột Vịt</h3>
+                    <p>Vị béo ngậy, tròn đầy tượng trưng cho sự sung túc cả năm.</p>
+                </div>
+                <div class="card">
+                    <img src="8" alt="Dưa Hành">
+                    <h3>Dưa Hành Củ Kiệu</h3>
+                    <p>Vị chua thanh thanh giúp mâm cỗ Tết thêm phần trọn vị.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="y-nghia">
+            <h2 class="section-title">Ý nghĩa Thiêng liêng</h2>
+            <div class="meaning-item">
+                <div class="meaning-img">
+                    <img src="9" alt="Đoàn viên">
+                </div>
+                <div class="meaning-content">
+                    <h3>Đoàn viên Gia đình</h3>
+                    <p>Tết là dịp để những người con xa quê trở về, cùng nhau ăn bữa cơm ấm áp tình thân.</p>
+                </div>
+            </div>
+
+            <div class="meaning-item">
+                <div class="meaning-img">
+                    <img src="10" alt="Tổ tiên">
+                </div>
+                <div class="meaning-content">
+                    <h3>Tưởng nhớ Tổ tiên</h3>
+                    <p>Lòng biết ơn cội nguồn được thể hiện qua mâm cỗ cúng và những nén nhang trầm thơm ngát.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p> 2026 Tết Việt Nam - Chúc Mừng Năm Mới</p>
+        <p> Thực hiện bởi: Hùng và Gia Bảo </p>
+    </footer>
+
+</body>
+</html>
