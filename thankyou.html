@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảm Ơn Bạn - Tết 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #b30000;
+            --gold: #ffd700;
+            --bg-cream: #fffdf5;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-cream);
+            background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/paper.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .thank-you-card {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border: 3px solid var(--primary-red);
+            max-width: 500px;
+            position: relative;
+        }
+
+        /* Trang trí góc bằng hoa văn Tết */
+        .thank-you-card::before {
+            content: "🧧";
+            font-size: 3rem;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary-red);
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: var(--gold);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .btn-back:hover {
+            background-color: white;
+            color: var(--primary-red);
+            border-color: var(--primary-red);
+            transform: scale(1.1);
+        }
+
+        /* Hiệu ứng pháo hoa đơn giản */
+        .firework {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); opacity: 0; }
+            50% { transform: translateY(-20px); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-card">
+        <div class="firework" style="top: 10%; left: 10%;">✨</div>
+        <div class="firework" style="top: 20%; right: 10%; animation-delay: 1s;">🌸</div>
+        
+        <h1>Cảm Ơn Bạn!</h1>
+        <p>Lời chúc của bạn đã được gửi đi thành công. <br> Chúc bạn một năm mới Giáp Bính Ngọ <strong>An Khang Thịnh Vượng - Vạn Sự Như Ý!</strong></p>
+        
+        <a href="index.html" class="btn-back">Quay lại trang chủ</a>
+    </div>
+
+</body>
+</html>
